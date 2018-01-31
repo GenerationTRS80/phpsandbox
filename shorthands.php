@@ -21,14 +21,22 @@
 //  $score=12;
 
 //  echo 'Your score is: ' .($score >10 ? ($age > 10 ? 'Average':'Exceptional'):($age > 10 ? 'Horriable':'Average'));
+
 ?>
 
 <!--Shorthand conditional statement with Embedded in HTML -->
 
-<div>
+<!-- <div>
   <?php if($loggedIn) { ?>
     <h1>Welcome User</h1>
  <?php } else {?>
   <h1>Welcome Guest</h1>
  <?php } ?>
+</div> -->
+
+
+<div>
+  <?php if($loggedIn): ?>
+    <h1>Welcome User</h1>
+ <?php endif; ?>
 </div>

@@ -23,7 +23,39 @@
       if(filter_var($email,FILTER_VALIDATE_EMAIL)){
 
           # Passed
-          echo 'EMAIL PASSED';       
+          // echo 'EMAIL PASSED';  
+          # Recipient Email
+          $toEmail = 'phil@pseiersen.com';
+          $subject = "Contact request from $name";
+          $body = '<h2>Contact Request</h2>
+              <h4>Name</h4><p>"$name"</p>
+              <h4>Email</h4><p>"$Email"</p>
+              <h4>Message</h4><p>"$message"</p>
+          ';
+
+          // Set Headers 
+          # Note: dot . is concatenate
+          #       dot equal .= is append
+          #       \r\n is carriage return and new line
+          $headers = "MIME-Version: 1.0" . "\r\n";
+          $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+          // Additional Header
+          $headers .= "From: " .$name. "<" .$email. ">". "\r\n";
+
+          if(mail($toEmail, $subject, $body, $headers)){
+              
+              echo 'EMAIL Sent';  
+              $msg='Your email has been sent';
+              $msgClass = 'alert-success';           
+          } else {
+
+              echo 'EMAIL NOT Sent';   
+              $msg='Your email was not sent';
+              $msgClass = 'alert-danger';          
+
+          }
+
       } else {
 
         # Failed
