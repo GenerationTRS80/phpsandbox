@@ -1,14 +1,18 @@
-<?php if(isset($_POST['submit'])){
+<?php 
+
+  if(isset($_POST['submit'])){
     session_start(); // Start the session
 
-    $name = $_SESSION['name'];
-    $email = $_SESSION['email'];    
+
+    // Session[] variable created below works like a public variables
+    $_SESSION['name'] = htmlentities($_POST['name']);
+    $_SESSION['email'] = htmlentities($_POST['email']);   
 
     /*
     // Redirect from PHP
     header('Location: page2.php');
     */
-}
+  }
 
 ?>
 
