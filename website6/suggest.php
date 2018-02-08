@@ -36,13 +36,12 @@
               $suggestion = $person;
 
           } else {
+              // Append another person if the search matches
               $suggestion .= ", $person";
 
           }
-
         }
       }
-
   }
 
 // IF there is NOT a Suggestion ($suggestion ==== "" then (?) say "No suggestion" else (:) say $suggestion
