@@ -15,7 +15,29 @@
   $people[]= "Shawn"; 
   $people[]= "Oliva"; 
   $people[]= "Derek";
-  
+  $people[]= "Dan";
+  $people[]= "Denise";
+  $people[]= "Darren";
+  $people[]= "Michael";
+  $people[]= "Tim";
+  $people[]= "Robert";
+  $people[]= "Timmy";
+  $people[]= "Cleopatra";
+  $people[]= "Abraham";
+  $people[]= "Madison";
+  $people[]= "Gilbert";
+  $people[]= "Samatha";
+  $people[]= "Erinie";
+  $people[]= "Steve";
+  $people[]= "Jason";
+  $people[]= "Richard";
+  $people[]= "Mary";
+  $people[]= "Phil";
+  $people[]= "Bill";
+  $people[]= "Andy";
+  $people[]= "Beth";
+  $people[]= "Kami";
+
   // Get Query String
   $sQuery = $_REQUEST['q'];
 
@@ -24,7 +46,7 @@
 
   // Get Suggestions 
   if($sQuery !== ""){
-      $Query = strlower($sQuery);
+      $Query = strtolower($sQuery);
       $iLen = strlen($sQuery);
 
       foreach($people as $person){
