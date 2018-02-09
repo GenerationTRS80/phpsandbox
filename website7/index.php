@@ -24,7 +24,9 @@
 
     echo "The filename = $filename <br> The directory name = $dirname <br> File exists = $fileexists";
     echo "<br>The realpath = $realpath <br> Is file=$isfile <br> Is writeable = $iswriteable <br> Is readable = $isreadable";
+
  */
+
 
 /* # Manipulate file and directory
   # Create Directory
@@ -44,24 +46,37 @@
 
 */
 
-
 /* # read and write file contents to page
+ # Write to file
+ # echo file_put_contents($file, 'Hello World');
 
-# Write to file
-# echo file_put_contents($file, 'Hello World');
+ # Write from file to string
+ # echo file_get_contents($file);
 
-# Write from file to string
-# echo file_get_contents($file);
+ # Append contents
+ # $current = file_get_contents($file);
+
+ # $current .= ' Goodby World!';
+
+ # file_put_contents($file,$current);
+*/
+
+/* # Put a file into a variable
+
+ # Open file for reading, note 2nd paramenter means read from
+  $handle = fopen($file, 'r');
+  $data = fre   ad($handle,filesize($file));
+  echo $data
+  fclose($handle);
 
 */
 
-#Append contents
-$current = file_get_contents($file);
-
-$current .= ' Goodby World!';
-
-file_put_contents($file,$current);
-
-# Put a file into a variable
+# Create file called file2.txt and write to it
+ $handle=fopen('file2.txt', 'w');
+ $txt="John Doe\n";
+ fwrite($handle,$txt);
+ $txt="Steve Smith\n";
+ fwrite($handle,$txt);
+ fclose($handle);
 
 ?>
