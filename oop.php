@@ -12,6 +12,7 @@
     # Create a Constructor. A constructor is s method that runs when the object is created.
     # Note: You can pass objects variables into the constructor
 
+    # Construct class
       public function __construct($name, $email){
         # Note: A space ' ' is required between "function __construct"
 
@@ -30,9 +31,10 @@
 
       }
 
-
-    # create methods
+    # Create methods Get and Set
     # Note: 2 types of methods getter and setters
+      
+      # Set/Get Name
       public function setName($name){
         $this->name= $name;
       }
@@ -41,23 +43,53 @@
         return $this->name.'<br>';
       }
 
-    # Get Set email
+      #Get/
       public function setEmail($email){
         $this->email= $email;
       }
 
+      #Set
       public function getEmail(){
         return $this->email.'<br>';
       }
   }
 
-  # Instantiate the person object
-    $person1 = new Person('John Doe','jdoe@gmail.com');
-
+  // # Instantiate the person object
+  //   $person1 = new Person('John Doe','jdoe@gmail.com');
 
   // # Get Name
   // echo $person1->getName();
 
 
+# >>>   Inheritance   <<<
 
+  class Customer extends Person{
+    private $balance;
+
+    # Create constructor 
+      public function __construct($name,$email,$balance){
+
+        #Call parent constructor
+        parent:: __construct($name,$email,$balance);
+        $this->balance= $balance;
+
+        echo 'A new '.__CLASS__.' has been created<br>';
+
+      }
+
+      #Set
+      public function setBalance($balance){
+        $this->balance= $balance;
+      }
+
+      #Get     
+      public function getBalance(){
+        return $this->balance;
+      }
+    
+  }
+
+  $customer1 = new Customer('John Doe','jd@doe.com','300');
+
+  echo $customer1->$getBalance();
 ?>
