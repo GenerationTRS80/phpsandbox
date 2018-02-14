@@ -91,5 +91,5 @@
 
   $customer1 = new Customer('John Doe','jd@doe.com','300');
 
-  echo $customer1->$getBalance();
+  echo $customer1->getBalance();
 ?>
