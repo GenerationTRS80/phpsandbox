@@ -8,6 +8,8 @@
     # if you set property to private. You can not directly access it.
       private $name;
       private $email;
+      public static $staticTest = 'Property';
+      private static $ageLimit = 40;
 
     # Create a Constructor. A constructor is s method that runs when the object is created.
     # Note: You can pass objects variables into the constructor
@@ -52,6 +54,13 @@
       public function getEmail(){
         return $this->email.'<br>';
       }
+
+      public static function getAgeLimit(){
+        # when using static methods You use 'self' and NOT 'this'
+        return self::$ageLimit;
+
+
+      }
   }
 
   // # Instantiate the person object
@@ -89,7 +98,16 @@
     
   }
 
+  /*
+  # Static properties and methods
+  # Access a property WITHOUT instantiating it. This is done by adding a static value to the class Person
+  echo 'Static Test '.person::$staticTest;
+  echo '<br> Age Limit '.person::getAgeLimit();
+  */
+
+  
   $customer1 = new Customer('John Doe','jd@doe.com','300');
 
-  echo $customer1->getBalance();
+  echo $customer1->getBalance().'<br>';
+  
 ?>
