@@ -9,13 +9,12 @@
   // Initialize variable
   $id=0;
 
-
-  if(isset($_GET['posts_id'])){ echo "GET_ID exists <br>"; }else{ echo "Error: ID Does NOT Exist <br>"; }
-
   // get ID  << Get 
   # Remove dangerous charachter  mysqli_real_escape_string()
-  $id=mysqli_real_escape_string($conn,$_GET['posts_id']);
-  #$id=$_GET['posts_id'];
+  if (isset($_GET['posts_id']))
+  {
+    $id=mysqli_real_escape_string($conn,$_GET['posts_id']);
+  }
 
   // Added Where clause for post.php
   $query= 'Select * FROM posts WHERE id='.$id;
