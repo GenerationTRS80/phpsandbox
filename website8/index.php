@@ -1,7 +1,7 @@
 <?php
-  #General error checking in PHP
-  error_reporting(E_ALL); 
-  ini_set('display_errors', 1);
+  // #General error checking in PHP
+  // error_reporting(E_ALL); 
+  // ini_set('display_errors', 1);
 
   // Called from connectDB.php
   require('config/connectDB.php');
@@ -43,7 +43,8 @@
             <small>Created on <?php echo $post['created_at']; ?> by
             <?php echo $post['author']; ?></small>
             <p><?php echo $post['body'];?></p>
-            <a class="btn btn-default" href="post.php?id=<?php echo $post['id']; ?>">Read More</a>
+            <!-- bootstrap class of btn btn-btn-default -->
+            <a class="btn btn-default" href="post.php?id=<?php echo $post['posts_id']; ?>">Read More</a>
           </div>
         <?php endforeach; ?>
       </div>
