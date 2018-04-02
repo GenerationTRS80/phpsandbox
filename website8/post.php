@@ -17,7 +17,7 @@
   }
 
   // Added Where clause for post.php
-  $query= 'Select * FROM posts WHERE id='.$id;
+  $query= 'Select * FROM posts WHERE posts_id = '.$id;
 
   // Get Results
   # This is like open recordset in ADODB wth $conn being the connection object coming from require()
