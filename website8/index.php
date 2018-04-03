@@ -4,6 +4,7 @@
   // ini_set('display_errors', 1);
 
   // Called from connectDB.php
+  require('config/config.php'); 
   require('config/connectDB.php');
 
   $query= 'Select * FROM posts';
@@ -30,25 +31,27 @@
   <!DOCTYPE html>
     <html>
       <head>
-        <title>PHP mySQL Blog</title>
+        <title>PHP Blog</title>
         <!-- Correct reference to bootswatch framework Cerulean -->
         <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
       </head>
     <body>
       <div class="container">
-      <h1>Posts</h1>
+        <h1>Posts</h1><br>
+        <!-- Begin foreach loop -->
         <?php foreach($posts as $post) : ?>
-          <div class="well">
+          <div class="col-md-6" style="background-color: #f2f2f2;">
             <h3><?php echo $post['title']; ?></h3>
             <small>Created on <?php echo $post['created_at']; ?> by
             <?php echo $post['author']; ?></small>
             <p><?php echo $post['body'];?></p>
-            <!-- bootstrap class of btn btn-btn-default -->
-            <a class="btn btn-default" href="post.php?id=<?php echo $post['posts_id']; ?>">Read More</a>
-          </div>
+            <!-- Buttone -->
+            <a class="btn btn-default" style="background-color: #d9d9d9" href="post.php?posts_id=<?php echo $post['posts_id']; ?>">Read More</a>
+          </div><br>
         <?php endforeach; ?>
+        <!-- End foreach loop -->
       </div>
     </body>
-  </html>
+  </html>s
 
   

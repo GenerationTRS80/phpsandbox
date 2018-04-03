@@ -4,6 +4,7 @@
   ini_set('display_errors', 1);
 
   // Called from connectDB.php
+  require('config/config.php'); 
   require('config/connectDB.php');
 
   // Initialize variable
@@ -11,6 +12,7 @@
 
   // get ID  << Get 
   # Remove dangerous charachter  mysqli_real_escape_string()
+  # https://phillipnb.wordpress.com/2010/11/26/undefined-index-and-_get/
   if (isset($_GET['posts_id']))
   {
     $id=mysqli_real_escape_string($conn,$_GET['posts_id']);
@@ -50,6 +52,8 @@
       </head>
     <body>
       <div class="container">
+      <!-- Button -->
+      <a class="btn btn-default" style="background-color: #d9d9d9" href="<?php echo ROOT_URL;?>">Back</a>
       <h1><?php echo $posts['title']; ?></h1>
         <small>Created on <?php echo $posts['created_at']; ?> by
         <?php echo $posts['author']; ?></small>
