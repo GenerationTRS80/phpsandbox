@@ -28,14 +28,7 @@
 
   ?>
 
-  <!DOCTYPE html>
-    <html>
-      <head>
-        <title>PHP Blog</title>
-        <!-- Correct reference to bootswatch framework Cerulean -->
-        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
-      </head>
-    <body>
+    <?php include('inc/header.php'); ?>
       <div class="container">
         <h1>Posts</h1><br>
         <!-- Begin foreach loop -->
@@ -51,7 +44,6 @@
         <?php endforeach; ?>
         <!-- End foreach loop -->
       </div>
-    </body>
-  </html>s
+    <?php include('inc/footer.php'); ?>
 
   

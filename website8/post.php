@@ -43,14 +43,7 @@
 
   ?>
 
-  <!DOCTYPE html>
-    <html>
-      <head>
-        <title>PHP mySQL Blog</title>
-        <!-- Correct reference to bootswatch framework Cerulean -->
-        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
-      </head>
-    <body>
+    <?php include('inc/header.php'); ?>
       <div class="container">
       <!-- Button -->
       <a class="btn btn-default" style="background-color: #d9d9d9" href="<?php echo ROOT_URL;?>">Back</a>
@@ -59,5 +52,4 @@
         <?php echo $posts['author']; ?></small>
         <p><?php echo $posts['body'];?></p>
       </div>
-    </body>
-  </html>
+    <?php include('inc/footer.php'); ?>
