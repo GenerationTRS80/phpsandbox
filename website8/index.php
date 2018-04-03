@@ -33,7 +33,7 @@
         <h1>Posts</h1><br>
         <!-- Begin foreach loop -->
         <?php foreach($posts as $post) : ?>
-          <div class="col-md-6" style="background-color: #f2f2f2;">
+          <div class="col-md-6" style="background-color: #f2f2f2">
             <h3><?php echo $post['title']; ?></h3>
             <small>Created on <?php echo $post['created_at']; ?> by
             <?php echo $post['author']; ?></small>
