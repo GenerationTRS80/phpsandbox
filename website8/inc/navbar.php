@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default">
-      <a class="navbar-brand" href="#">PHO Blog</a>
+      <a class="navbar-brand" href="#">PHP Blog</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
