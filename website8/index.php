@@ -7,7 +7,7 @@
   require('config/config.php'); 
   require('config/connectDB.php');
 
-  $query= 'Select * FROM posts';
+  $query= 'Select * FROM posts ORDER BY created_at DESC';
 
   // Get Results
   # This is like open recordset in ADODB wth $conn being the connection object coming from require()
