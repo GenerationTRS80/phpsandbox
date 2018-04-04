@@ -1,7 +1,7 @@
 <?php
-  // #General error checking in PHP
-  // error_reporting(E_ALL); 
-  // ini_set('display_errors', 1);
+  #General error checking in PHP
+  error_reporting(E_ALL); 
+  ini_set('display_errors', 1);
 
   // Create connection
   $conn = mysqli_connect('localhost','root','purple95','phpblog');

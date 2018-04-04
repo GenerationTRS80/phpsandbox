@@ -1,11 +1,29 @@
 <?php
-  // #General error checking in PHP
-  // error_reporting(E_ALL); 
-  // ini_set('display_errors', 1);
+  #General error checking in PHP
+  error_reporting(E_ALL); 
+  ini_set('display_errors', 1);
 
   // Called from connectDB.php
   require('config/config.php'); 
   require('config/connectDB.php');
+
+  // Check for submint
+  if(isset($_POST['submit'])){
+      // Get form data
+      $title = mysqli_real_escape_string($conn,$_POST['title']);
+      $body = mysqli_real_escape_string($conn,$_POST['body']);
+      $author = mysqli_real_escape_string($conn,$_POST['author']);
+
+      // Database transaction: insert into DB table POSTS
+      $query="INSERT INTO posts(title,body,author) VALUES('$title','$author','$body')";
+
+      if(mysqli_query($conn,$query)){
+        header('Location: '.ROOT_URL.'');
+      } else {
+        echo 'ERROR: '. mysqli_error($conn);
+      }
+
+  }
 
   ?>
 
