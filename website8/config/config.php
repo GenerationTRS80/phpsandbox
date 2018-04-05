@@ -1,3 +1,3 @@
 <?php
 
-  define('ROOT_URL','http://www.generationtrs80.com/php/phpsandbox/website8');
+  define('ROOT_URL','http://www.generationtrs80.com/php/phpsandbox/website8/');

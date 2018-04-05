@@ -1,3 +1,10 @@
+<?php
+
+  // # require for ROOT_URL
+  // require('config/config.php'); 
+
+?>
+
 <nav class="navbar navbar-default" style="background-color: #99ddff">
       <a class="navbar-brand" href="#">PHP Blog</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,7 +17,7 @@
             <a class="nav-link" href="<?php echo ROOT_URL; ?>">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo ROOT_URL; ?>/addpost.php">Add Post</a>
+            <a class="nav-link" href="<?php echo ROOT_URL; ?>addpost.php">Add Post</a>
           </li>
           <!--
           <li class="nav-item">
