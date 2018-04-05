@@ -7,10 +7,7 @@
   require('config/config.php'); 
   require('config/connectDB.php');
 
-  // Initialize variable
-  $id=0;
-
-  // get ID  << Get 
+  // get ID  << Get the current post selected with a query
   # Remove dangerous charachter  mysqli_real_escape_string()
   # https://phillipnb.wordpress.com/2010/11/26/undefined-index-and-_get/
   if (isset($_GET['posts_id']))
@@ -18,7 +15,7 @@
     $id=mysqli_real_escape_string($conn,$_GET['posts_id']);
   }
 
-  // Added Where clause for post.php
+    // Create query with where clause 
   $query= 'Select * FROM posts WHERE posts_id = '.$id;
 
   // Get Results
@@ -51,5 +48,8 @@
         <small>Created on <?php echo $posts['created_at']; ?> by
         <?php echo $posts['author']; ?></small>
         <p><?php echo $posts['body'];?></p>
+        <hr>
+        <!-- ?posts_id takes value from echo $post['posts_id']-->
+        <a href="<?php echo ROOT_URL; ?>editpost.php?posts_id=<?php echo $post['posts_id']; ?>" class="btn btn-default" style="background-color: #d9d9d9">Edit Post</a>
       </div>
     <?php include('inc/footer.php'); ?>
