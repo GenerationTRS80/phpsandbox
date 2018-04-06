@@ -50,7 +50,7 @@
         <?php echo $posts['author']; ?></small>
         <p><?php echo $posts['body'];?></p>
         <hr>
-        <!-- ?posts_id takes value from echo $post['posts_id']-->
+        <!-- Fixed reference to editpost by removing "" from href=""-->
         <a class="btn btn-default" style="background-color: #d9d9d9" href=<?php echo ROOT_URL;?>editpost.php?posts_id=<?php echo $posts['posts_id']; ?>>Edit Post</a>
       </div>
     <?php include('inc/footer.php'); ?>
