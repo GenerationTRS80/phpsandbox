@@ -45,11 +45,12 @@
       <!-- Button -->
       <a class="btn btn-default" style="background-color: #d9d9d9" href="<?php echo ROOT_URL;?>">Back</a>
       <h1><?php echo $posts['title']; ?></h1>
+      <!-- <h1><?php echo ROOT_URL;?>editpost.php?posts_id=<?php echo $posts['posts_id']; ?></h1> -->
         <small>Created on <?php echo $posts['created_at']; ?> by
         <?php echo $posts['author']; ?></small>
         <p><?php echo $posts['body'];?></p>
         <hr>
         <!-- ?posts_id takes value from echo $post['posts_id']-->
-        <a class="btn btn-default" style="background-color: #d9d9d9" href="<?php echo ROOT_URL; ?>editpost.php?posts_id=<?php echo $post['posts_id'];?>">Edit Post</a>
+        <a class="btn btn-default" style="background-color: #d9d9d9" href=<?php echo ROOT_URL;?>editpost.php?posts_id=<?php echo $posts['posts_id']; ?>>Edit Post</a>
       </div>
     <?php include('inc/footer.php'); ?>
