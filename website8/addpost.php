@@ -15,7 +15,7 @@
       $author = mysqli_real_escape_string($conn,$_POST['author']);
 
       // Database transaction: insert into DB table POSTS
-      $query="INSERT INTO posts(title,body,author) VALUES('$title','$author','$body')";
+      $query="INSERT INTO posts(title,body,author) VALUES('$title','$body','$author')";
 
       if(mysqli_query($conn,$query)){
         header('Location: '.ROOT_URL.'');

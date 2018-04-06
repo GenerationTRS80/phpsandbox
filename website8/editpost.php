@@ -37,6 +37,7 @@
     $id=mysqli_real_escape_string($conn,$_GET['posts_id']);
   }
 
+
   // Create query with where clause 
   $query= 'Select * FROM posts WHERE posts_id = '.$id;
 
@@ -44,10 +45,23 @@
   $result = mysqli_query($conn,$query);
 
   // >> Fetch Data <<
-  $posts = mysqli_fetch_assoc($result);
+  $post = mysqli_fetch_assoc($result);
 
-  // # Show what is in $posts object as string
-  // var_dump($posts);  
+  # Show what is in $posts object as string
+  var_dump($post);  
+
+
+  //   $title= $post['title'];
+ 
+  // if (isset($_GET['author']))
+  // {
+  //   $author=$post['author'];;
+  // }
+
+  // if (isset($_GET['body']))
+  // {
+  //   $body= $post['body'];
+  // }
 
   // Free results - Close recordset
   mysqli_free_result($result);
@@ -59,15 +73,15 @@
 
     <?php include('inc/header.php'); ?>
       <div class="container">
-        <h1>Add Posts</h1><br>
+        <h1>Edit Post</h1><br>
         <form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
           <div class="form-group">
             <label>Title</label>
-            <input type="text" name="title" class="form-control" value="<?php echo $post['title']; ?>">
+            <input type="text" name="title" class="form-control" value=<?php echo $post['title']; ?>>
           </div>
           <div class="form-group">
             <label>Author</label>
-            <input type="text" name="author" class="form-control" value="<?php echo $post['author']; ?>">
+            <input type="text" name="author" class="form-control" value=<?php echo $post['author']; ?>>
           </div>
           <div class="form-group">
             <label>Body</label>
